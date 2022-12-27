@@ -26,5 +26,8 @@ def playAlarm (alarmTime):
 # Obtain the alarm time from the user
 alarmTime = input ("Enter the time for the alarm (HH:MM): ") # Uses military time notation
 
+# Create a thread to run the alarm in the background
+alarmThread = threading.Thread (target = playAlarm, args = (alarmTime,))
+alarmThread.start ()
 
 print ("Alarm is set for " + alarmTime)
